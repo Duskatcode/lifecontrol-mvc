@@ -16,6 +16,9 @@ use App\Http\Controllers\StopwatchController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggle'])
+    ->name('tasks.toggle');
+
 Route::resource('tasks', TaskController::class);
 
 Route::get('/tip-calculator', [TipCalculatorController::class, 'index'])
